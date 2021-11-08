@@ -16,7 +16,7 @@ public interface SqlSession {
     /**
      * 查询单个
      */
-    <T> T selectOne(String statementId,Object param) throws Exception;
+    <T> T selectOne(String statementId, Object param) throws Exception;
 
     /**
      * 获取代理对象

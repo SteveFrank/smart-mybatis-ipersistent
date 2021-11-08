@@ -1,5 +1,6 @@
 package com.smart.framework.test;
 
+import com.smart.framework.demo.mapper.UserMapper;
 import com.smart.framework.demo.pojo.User;
 import com.smart.ipersistent.io.Resources;
 import com.smart.ipersistent.sqlSession.SqlSession;
@@ -29,7 +30,7 @@ public class IpersistentTest {
 
         System.out.println("start user.selectList ... ...");
 
-        List<User> list = sqlSession.selectList("com.smart.framework.demo.mapper.UserMapper.selectList", null);
+        List<User> list = sqlSession.selectList("com.smart.framework.demo.mapper.UserMapper.findAllUser", null);
 
         for (User user : list) {
             System.out.println(user);
@@ -39,9 +40,28 @@ public class IpersistentTest {
         userTemp.setId(1);
         userTemp.setUsername("tom");
 
-        User user1 = sqlSession.selectOne("com.smart.framework.demo.mapper.UserMapper.selectOne", userTemp);
+        User user1 = sqlSession.selectOne("com.smart.framework.demo.mapper.UserMapper.findOneUser", userTemp);
         System.out.println(user1);
-
     }
+
+    @Test
+    public void test2() throws Exception {
+        // 1. 根据配置文件的路径，将配置文件加载成字节输入流，存入到内存中
+        InputStream resourceAsSteam = Resources.getResourceAsStream("sqlMapConfig.xml");
+
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsSteam);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        User user = new User();
+        user.setId(1);
+        user.setUsername("tom");
+
+        // 代理对象
+        UserMapper mapperProxy = sqlSession.getMapper(UserMapper.class);
+
+        User user2 = mapperProxy.findOneUser(user);
+        System.out.println(user2);
+    }
+
 
 }
