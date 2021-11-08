@@ -1,0 +1,18 @@
+<configuration>
+
+    <!--数据库配置信息-->
+    <!--1.配置数据库配置信息-->
+    <!--jdbc:mysql://localhost:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true-->
+    <dataSource>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/db2021?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
+        <property name="username" value="root"/>
+        <property name="password" value="admin123"/>
+    </dataSource>
+
+    <!--2.引入映射配置文件的路径-->
+    <mappers>
+        <mapper resource="mapper/UserMapper.xml"></mapper>
+    </mappers>
+
+</configuration>
