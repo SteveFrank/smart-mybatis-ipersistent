@@ -109,6 +109,6 @@ public class DefaultSqlSession implements SqlSession {
             }
         });
 
-        return null;
+        return (T) proxyInstance;
     }
 }

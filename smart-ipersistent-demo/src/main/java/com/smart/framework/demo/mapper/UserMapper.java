@@ -13,7 +13,7 @@ public interface UserMapper {
     /**
      * 查询所有
      */
-    <E> List<E> findAllUser(User user) throws Exception;
+    <E> List<E> findAllUser() throws Exception;
 
     /**
      * 查询单个

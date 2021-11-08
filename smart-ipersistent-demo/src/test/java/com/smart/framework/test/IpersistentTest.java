@@ -61,6 +61,9 @@ public class IpersistentTest {
 
         User user2 = mapperProxy.findOneUser(user);
         System.out.println(user2);
+
+        List<User> users = mapperProxy.findAllUser();
+        System.out.println(users);
     }
 
 
