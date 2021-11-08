@@ -5,7 +5,7 @@
     <!--jdbc:mysql://localhost:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true-->
     <dataSource>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/db2021?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/smart_mybatis"/>
         <property name="username" value="root"/>
         <property name="password" value="admin123"/>
     </dataSource>

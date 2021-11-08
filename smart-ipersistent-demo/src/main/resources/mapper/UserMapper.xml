@@ -6,7 +6,7 @@
             namespace的值要和接口的类全路径保持一致
             id的值要和方法名保持一致
     -->
-    <select id="findAllUser" resultType="com.smart.framework.demo.pojo.User">
+    <select id="selectList" resultType="com.smart.framework.demo.pojo.User">
         select * from user
     </select>
 
@@ -15,7 +15,7 @@
         user.setId(1);
         user.setUserName("tom");
     -->
-    <select id="findOneUser" resultType="com.smart.framework.demo.pojo.User" parameterType="com.smart.framework.demo.pojo.User">
+    <select id="selectOne" resultType="com.smart.framework.demo.pojo.User" parameterType="com.smart.framework.demo.pojo.User">
         select * from user where id = #{id} and username = #{username}
     </select>
 
